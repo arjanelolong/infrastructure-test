@@ -1,0 +1,28 @@
+---
+- ansible.builtin.shell:
+    cmd: mkdir -p deployment
+    chdir: /home/ubuntu
+- ansible.builtin.copy:
+    src: docker-compose.yml
+    dest: /home/ubuntu/deployment/docker-compose.yml
+- ansible.builtin.copy:
+    src: conf.d
+    dest: /home/ubuntu/deployment
+- ansible.builtin.copy:
+    src: Dockerfile
+    dest: /home/ubuntu/deployment/Dockerfile
+
+- ansible.builtin.shell:
+    cmd: docker system prune --force
+    chdir: /home/ubuntu
+- ansible.builtin.shell:
+    cmd: docker build -t laravel:stable .
+    chdir: /home/ubuntu/deployment
+    
+- ansible.builtin.shell:
+    cmd: docker-compose --file docker-compose.yml pull
+    chdir: /home/ubuntu/deployment
+- ansible.builtin.shell:
+    cmd: docker stack deploy --compose-file docker-compose.yml ssh_key
+    chdir: /home/ubuntu/deployment
+

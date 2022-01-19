@@ -1,0 +1,9 @@
+---
+- name: docker deploy
+  remote_user: ubuntu
+  hosts: main
+  become: 'yes'
+  become_method: sudo
+
+  roles:
+    - docker-deploy
