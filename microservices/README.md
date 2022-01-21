@@ -1,10 +1,14 @@
 # Explanations
 
 ## Services
-- activemq    - job
-- eventstore  - message
-- jobseeker   - operator
-- recruiter   - api
+- activemq    
+- eventstore  
+- jobseeker   
+- recruiter   
+- job
+- message
+- operator
+- api
 - web
 
 1. First is we provision our AWS resources using terraform. 
