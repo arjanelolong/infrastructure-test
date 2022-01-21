@@ -1,5 +1,12 @@
 # Explanations
 
+## Services
+- activemq    - job
+- eventstore  - message
+- jobseeker   - operator
+- recruiter   - api
+- web
+
 1. First is we provision our AWS resources using terraform. 
     - VPC
     - EKS
