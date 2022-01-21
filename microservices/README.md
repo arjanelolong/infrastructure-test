@@ -11,6 +11,7 @@
 - api
 - web
 
+## Resources 
 1. First is we provision our AWS resources using terraform. 
     - VPC
     - EKS
