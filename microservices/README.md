@@ -20,6 +20,7 @@
     - ACM (SSL)
     - ECR
     - S3 (as terraform backend)
+    - IAM (Create user, grant access to ECR and EKS cluster)
 
 2. We use EKS which supports scaling and management using kubernetes container orchestration. We will also deploying ALB to take care of load balancing and ASG for auto scaling nodes.
 
